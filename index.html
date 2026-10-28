@@ -1043,7 +1043,7 @@ function header(){
 }
 function megaHTML(id){
  const s = SEC[id];
- return `<div class="mega"><div class="wrap"><div class="mega-intro"><h3>${s.t}</h3><p>${s.d}</p><a class="btn btn-sm btn-violet" href="#${s.id}">Весь раздел</a></div><div class="mega-links">${s.items.map(([r,t,d])=>`<a class="mega-link" href="#${r}"><b>${t}${r==='catalog-soon'?' <span class="tag gold">8</span>':''}${r==='test'?' <span class="tag coral">2 мин</span>':''}</b><span>${d}</span></a>`).join('')}</div></div></div>`;
+ return `<div class="mega"><div class="wrap"><div class="mega-intro"><h3>${s.t}</h3><p>${s.d}</p><a class="btn btn-sm btn-violet" href="#${s.id}">Весь раздел</a></div><div class="mega-links">${s.items.map(([r,t,d])=>`<a class="mega-link" href="#${r}"><b>${t}${r==='catalog-soon'?' <span class="tag gold">'+COURSES.filter(c=>c.cat==='soon').length+'</span>':''}${r==='test'?' <span class="tag coral">2 мин</span>':''}</b><span>${d}</span></a>`).join('')}</div></div></div>`;
 }
 function footer(){
  return `<footer class="ftr"><div class="wrap"><div class="fmap"><div><a class="logo" href="#home" aria-label="TheOneFilm, на главную"><img src="${LOGO}" alt="The One Film" width="160" height="84"></a><p style="margin-top:14px;max-width:32ch">Киношкола, продюсерский центр, кинокомпания и сценарное агентство. Станьте лучшей версией себя — because you are the one.</p><p style="margin-top:14px;color:var(--on-night)"><span style="user-select:all">+7 495 266 69 15</span><br><span style="user-select:all">info@theonefilm.ru</span></p><div class="socials">${SOCIAL.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join('')}</div></div>
